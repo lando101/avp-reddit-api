@@ -1,12 +1,4 @@
-# Ignore Python virtual environment
+# Ignore env variables file
 .env
 
-# Ignore IDE/editor files
-.vscode/
-*.swp
 
-# Ignore log files
-*.log
-
-# Ignore Railway files (optional)
-.railway/
