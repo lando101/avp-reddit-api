@@ -1,6 +1,8 @@
 from fastapi import FastAPI, Depends, HTTPException, Query, Header
 from fastapi.security import OAuth2AuthorizationCodeBearer
+from dotenv import load_dotenv 
 import requests
+
 
 # Initialize FastAPI app
 app = FastAPI(
@@ -8,6 +10,7 @@ app = FastAPI(
     description="An API to interact with Reddit via OAuth for a Vision Pro app.",
     version="1.0.0"
 )
+
 
 # Reddit API credentials (Replace with actual credentials)
 CLIENT_ID = "mYYBez2n7Gnctjn1XEWIzQ"
@@ -165,4 +168,7 @@ def vote(post_id: str, vote: int, token: str = Header(None)):
 # --- RUN SERVER LOCALLY ---
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="127.0.0.1", port=8000)
+    import os
+    
+    port = int(os.getenv("PORT", 8000))  # Default to 8000 if PORT is not set
+    uvicorn.run(app, host="0.0.0.0", port=port)
