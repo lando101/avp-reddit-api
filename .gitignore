@@ -1,0 +1,16 @@
+# Ignore Python virtual environment
+venv/
+.env
+*.pyc
+__pycache__/
+db.sqlite3
+
+# Ignore IDE/editor files
+.vscode/
+*.swp
+
+# Ignore log files
+*.log
+
+# Ignore Railway files (optional)
+.railway/
